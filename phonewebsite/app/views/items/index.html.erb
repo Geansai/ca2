@@ -1,0 +1,113 @@
+
+<p id="notice"><%= notice %></p>
+
+
+ <div id="itemsContainer">
+  
+  <h1>Phones</h1>
+
+      <% @items.each do |item| %>
+      <div class="itemhols">
+      
+       
+       <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+        <h1><strong><%= item.model %></strong></h1>
+        <p>Brand: <em><%= item.make %></em></p>
+       
+       <br>
+        <p><%= item.description %></p>
+        <br>
+  
+       <p>
+         
+         
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Use an element to toggle between a like/dislike icon -->
+<i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+         
+         
+         
+         <%= link_to 'Show',  item, :class => "button", :role => "button" %>
+          <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
+          <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+       
+      
+       </p>
+        
+      </div>
+    <% end %>
+      
+</div>
+
+
+
+
+<br>
+<%= link_to 'New Item',  new_item_path, :class => "button", :role => "button" %>
+
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+    
+    $(".itemsContainer").show(10000);
+  
+    
+  }
+  )
+  
+  
+  
+</script>
+<script src="assets/javascript/application.js"></script>
+
+
+
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "assets/stylesheets/application.scss" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+</nav>
+
+<!-- Top menu -->
+
+  
+<!-- !PAGE CONTENT! -->
+
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+
+
+
+
+</body>
+</html>
